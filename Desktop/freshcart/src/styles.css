@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Exo", ui-sans-serif, system-ui, sans-serif;
+  --color-primary-50: #f0fdf4;
+  --color-primary-100: #dcfce7;
+  --color-primary-500: #22c55e;
+  --color-primary-600: #16a34a;
+  --color-primary-700: #15803d;
+  --color-ink: #101828;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-gray-50 font-sans text-ink antialiased; }
+  button, a, input, select, textarea { @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600; }
+}
+
+@utility btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-60; }
+@utility btn-primary { @apply btn bg-primary-600 text-white shadow-sm hover:bg-primary-700; }
+@utility btn-outline { @apply btn border border-gray-300 bg-white text-gray-700 hover:border-primary-600 hover:text-primary-600; }
+@utility btn-dark { @apply btn bg-gray-900 text-white hover:bg-gray-800; }
+@utility btn-danger { @apply btn border border-red-200 bg-red-50 text-red-600 hover:bg-red-100; }
+@utility card { @apply rounded-2xl border border-gray-100 bg-white shadow-sm; }
+@utility field { @apply w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm text-ink placeholder:text-gray-500 focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 focus:outline-none; }
+@utility field-error { @apply mt-1 text-xs font-medium text-red-600; }
+@utility container-page { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
